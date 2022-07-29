@@ -2,7 +2,7 @@
 
 
 @section('content')
- <div class="mt-4 p-5 bg-primary text-dark rounded">
+ <div class="mb-4 p-5 bg-light  rounded-3">
    <h1>Hello 尊者</h1>
    <p class="lead">
       你现在所看到的是 <a href="www.baidu.com">百度搜索404</a>的主页.
