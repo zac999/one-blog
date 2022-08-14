@@ -16,6 +16,11 @@ class UsersController extends Controller
          'except'=>['show','create','store','index','confirmEmail']
         ]);
         $this->middleware('guest',['only'=>['create']]);
+
+        //限流一小时内只能提交10次请求
+        $this->middleware('throttle:10,60',[
+            'only'=>['store']
+        ]);
     }
     //index
     public function index(){

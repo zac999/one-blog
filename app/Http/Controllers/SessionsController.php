@@ -11,6 +11,11 @@ class SessionsController extends Controller
     public function __construct()
     {
         $this->middleware('guest',['only'=>['create']]);
+
+        //限流10分钟十次
+        $this->middleware('throttle:10,10',[
+            'only'=>['store']
+        ]);
     }
     //create
     public function create(){
